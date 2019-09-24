@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+        android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <EditText
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="9dp"
+            android:singleLine="true"
+            android:hint="Title"
+            android:drawablePadding="9dp"
+            android:textColor="@android:color/primary_text_light"/>
+
+    <TextView
+            android:id="@+id/d"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="9dp"
+            android:singleLine="true"
+            android:textSize="15dp"
+            android:text="Date: "
+            android:drawablePadding="9dp"
+            android:textColor="@android:color/primary_text_light"
+            app:layout_constraintTop_toBottomOf="@+id/title"/>
+
+    <TextView
+            android:id="@+id/date"
+            android:layout_width="match_parent"
+            android:layout_height="23dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="60dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="9dp"
+            android:textSize="15dp"
+            android:singleLine="true"
+            android:drawablePadding="9dp"
+            android:textColor="@android:color/primary_text_light"
+            app:layout_constraintTop_toBottomOf="@+id/title"
+            app:layout_constraintLeft_toRightOf="@+id/d"/>
+
+    <TextView
+            android:id="@+id/t"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="9dp"
+            android:singleLine="true"
+            android:textSize="15dp"
+            android:text="Time: "
+            android:drawablePadding="9dp"
+            android:textColor="@android:color/primary_text_light"
+            app:layout_constraintTop_toBottomOf="@+id/date"/>
+
+    <TextView
+            android:id="@+id/time"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="60dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="9dp"
+            android:textSize="15dp"
+            android:singleLine="true"
+            android:drawablePadding="9dp"
+            android:textColor="@android:color/primary_text_light"
+            app:layout_constraintTop_toBottomOf="@+id/date"
+            app:layout_constraintLeft_toRightOf="@+id/t"/>
+
+    <CheckBox
+            android:id="@+id/repeatEveryday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Repeat Everyday"
+            app:layout_constraintTop_toBottomOf="@+id/time"/>
+
+    <TextView
+            android:id="@+id/repeatDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Repeat on"
+            app:layout_constraintTop_toBottomOf="@+id/repeatEveryday"
+            app:layout_editor_absoluteX="10dp"/>
+
+    <CheckBox
+            android:id="@+id/Monday"
+            android:text="Mo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/repeatDay"
+            android:orientation="horizontal"/>
+
+    <CheckBox
+            android:id="@+id/Tuesday"
+            android:text="Tu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/repeatDay"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toRightOf="@+id/Monday"/>
+
+    <CheckBox
+            android:id="@+id/Wednesday"
+            android:text="We"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/repeatDay"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toRightOf="@+id/Tuesday"/>
+
+    <CheckBox
+            android:id="@+id/Thursday"
+            android:text="Th"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/repeatDay"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toRightOf="@+id/Wednesday"/>
+
+    <CheckBox
+            android:id="@+id/Friday"
+            android:text="Fr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/repeatDay"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toRightOf="@+id/Thursday"/>
+
+    <CheckBox
+            android:id="@+id/Saturday"
+            android:text="Sa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/repeatDay"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toRightOf="@+id/Friday"/>
+
+    <CheckBox
+            android:id="@+id/Sunday"
+            android:text="Su"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/repeatDay"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toRightOf="@+id/Saturday"/>
+
+    <CheckBox
+            android:id="@+id/repeatYear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Repeat yearly"
+            app:layout_constraintTop_toBottomOf="@+id/Monday"/>
+
+    <Button
+            android:id="@+id/event_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Event"
+            app:layout_constraintTop_toBottomOf="@+id/repeatYear"/>
+
+
+
+</android.support.constraint.ConstraintLayout>
