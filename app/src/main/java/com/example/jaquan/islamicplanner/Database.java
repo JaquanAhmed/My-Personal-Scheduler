@@ -12,19 +12,19 @@ public class Database extends SQLiteOpenHelper {
     private static final String TAG = "Database";
     public static final String DATABASE_NAME = "Calendar Database";
     public static final String TABLE_NAME = "Events";
-    public static final String COL_1 = "ID";
-    public static final String COL_2 = "eventName";
-    public static final String COL_3 = "eventDate";
-    public static final String COL_4 = "eventTime";
-    public static final String COL_5 = "repeatYearly";
-    public static final String COL_6 = "repeatEveryday";
-    public static final String COL_7 = "monday";
-    public static final String COL_8 = "tuesday";
-    public static final String COL_9 = "wednesday";
-    public static final String COL_10 = "thursday";
-    public static final String COL_11 = "friday";
-    public static final String COL_12 = "saturday";
-    public static final String COL_13 = "sunday";
+    public static final String ID = "ID";
+    public static final String N = "eventName";
+    public static final String D = "eventDate";
+    public static final String T = "eventTime";
+    public static final String RY = "repeatYearly";
+    public static final String RE = "repeatEveryday";
+    public static final String Monday = "monday";
+    public static final String Tuesday = "tuesday";
+    public static final String Wednesday = "wednesday";
+    public static final String Thursday = "thursday";
+    public static final String Friday = "friday";
+    public static final String Saturday = "saturday";
+    public static final String Sunday = "sunday";
 
 
     public Database(Context context) {
@@ -49,18 +49,18 @@ public class Database extends SQLiteOpenHelper {
                                        int monday, int tuesday, int wednesday, int thursday, int friday, int saturday, int sunday) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COL_2, eventName);
-        contentValues.put(COL_3, eventDate);
-        contentValues.put(COL_4, eventTime);
-        contentValues.put(COL_5, repeatYearly);
-        contentValues.put(COL_6, repeatEveryday);
-        contentValues.put(COL_7, monday);
-        contentValues.put(COL_8, tuesday);
-        contentValues.put(COL_9, wednesday);
-        contentValues.put(COL_10, thursday);
-        contentValues.put(COL_11, friday);
-        contentValues.put(COL_12, saturday);
-        contentValues.put(COL_13, sunday);
+        contentValues.put(N, eventName);
+        contentValues.put(D, eventDate);
+        contentValues.put(T, eventTime);
+        contentValues.put(RY, repeatYearly);
+        contentValues.put(RE, repeatEveryday);
+        contentValues.put(Monday, monday);
+        contentValues.put(Tuesday, tuesday);
+        contentValues.put(Wednesday, wednesday);
+        contentValues.put(Thursday, thursday);
+        contentValues.put(Friday, friday);
+        contentValues.put(Saturday, saturday);
+        contentValues.put(Sunday, sunday);
 
         Log.d(TAG, "addData: Adding " + eventName + ", " + eventDate + " and " + eventTime + " and " + repeatYearly + " and " +
                 repeatEveryday + " and " + monday + " and " + tuesday + " and " + wednesday + " and " + thursday + " and " +
@@ -77,8 +77,8 @@ public class Database extends SQLiteOpenHelper {
 
     public Cursor getData(String date, String day){
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT * FROM " + TABLE_NAME + " WHERE " + COL_6 + " = 1 OR (" + COL_5 + " = 1 AND "
-                + COL_3 + " = " + date + ")";
+        String query = "SELECT * FROM " + TABLE_NAME + " WHERE " + RE + " = 1 OR " + day + "= 1 OR " + "(" + RY
+                + " = 1 AND " + D + " = " + date + ")";
         Cursor data = db.rawQuery(query, null);
         return data;
     }
