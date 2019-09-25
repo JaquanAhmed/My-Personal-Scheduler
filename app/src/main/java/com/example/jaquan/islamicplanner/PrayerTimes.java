@@ -34,6 +34,7 @@ public class PrayerTimes {
     private String year;
     private String month;
     private String day;
+    private String dotw;
 
     public PrayerTimes(Context context, String city, String country, String method) {
         this.context = context;
@@ -51,7 +52,7 @@ public class PrayerTimes {
         this.day = d.format(date);
     }
 
-    public PrayerTimes(Context context, String city, String country, String method, String year, String month, String day) {
+    public PrayerTimes(Context context, String city, String country, String method, String year, String month, String day, String dotw) {
         this.context = context;
         this.city = city;
         this.country = country;
@@ -59,6 +60,7 @@ public class PrayerTimes {
         this.year = year;
         this.month = month;
         this.day = day;
+        this.dotw = dotw;
     }
 
     public String getYear() {
@@ -120,15 +122,12 @@ public class PrayerTimes {
                     break;
                 }
             }
-            Calendar calendar = Calendar.getInstance();
-            Date date = calendar.getTime();
-            SimpleDateFormat d = new SimpleDateFormat("dd-MM");
-            SimpleDateFormat dotw = new  SimpleDateFormat("EEEE");
             Database database = new Database(context);
-            Cursor Data = database.getData (d.format(date), dotw.format(date));
+            Cursor Data = database.getData ("\"" + day + "-" + month + "\"", dotw);
             while(Data.moveToNext()){
-                String t = Data.getString(1) + "\n" + Data.getString(3);
-                Times.add(t);
+                    String t = Data.getString(1) + "\n" + Data.getString(3);
+                    Log.e(TAG, t);
+                    Times.add(t);
             }
             Collections.sort(Times, new Comparator<String>(){
                 @Override

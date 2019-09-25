@@ -43,6 +43,7 @@ public class Schedule extends Fragment implements View.OnClickListener{
     private String year;
     private String month;
     private String day;
+    private String dotw;
     private Bundle bundle;
 
     @Nullable
@@ -69,6 +70,7 @@ public class Schedule extends Fragment implements View.OnClickListener{
             year = bundle.getString("year");
             month = bundle.getString("month");
             day = bundle.getString("day");
+            dotw = bundle.getString("dotw");
         }
         Date.setText(day+"-"+month+"-"+year);
         Date.setOnClickListener(this);
@@ -111,7 +113,7 @@ public class Schedule extends Fragment implements View.OnClickListener{
                     e.printStackTrace();
                 }
             }else{
-                PrayerTimes prayerTimes = new PrayerTimes(getActivity(), city, country, cm, year, month, day);
+                PrayerTimes prayerTimes = new PrayerTimes(getActivity(), city, country, cm, year, month, day, dotw);
                 try {
                     pt = prayerTimes.getTimes();
                 } catch (IOException e) {

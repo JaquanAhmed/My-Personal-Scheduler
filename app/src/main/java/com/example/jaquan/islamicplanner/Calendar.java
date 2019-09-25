@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.CalendarView;
 import android.widget.Toast;
 
+
 import static android.support.constraint.Constraints.TAG;
 
 public class Calendar extends Fragment{
@@ -32,6 +33,34 @@ public class Calendar extends Fragment{
 
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
+                java.util.Calendar calendar = java.util.Calendar.getInstance();
+                calendar.set(year, month, dayOfMonth);
+                int dayOfWeek = calendar.get(java.util.Calendar.DAY_OF_WEEK);
+                String dotw = "";
+                switch(dayOfWeek){
+                    case 1:
+                        dotw="Sunday";
+                        break;
+                    case 2:
+                        dotw="Monday";
+                        break;
+                    case 3:
+                        dotw="Tuesday";
+                        break;
+                    case 4:
+                        dotw="Wednesday";
+                        break;
+                    case 5:
+                        dotw="Thursday";
+                        break;
+                    case 6:
+                        dotw="Friday";
+                        break;
+                    case 7:
+                        dotw="Saturday";
+                        break;
+                }
+                Log.d(TAG, dotw);
                 String d;
                 String m;
                 if (dayOfMonth < 10){
@@ -40,8 +69,10 @@ public class Calendar extends Fragment{
                     d = Integer.toString(dayOfMonth);
                 }
                 if (month < 10){
+                    month += 1;
                     m = 0 + Integer.toString(month);
                 }else{
+                    month += 1;
                     m = Integer.toString(month);
                 }
                 //String date = d + "-" + m + "-" + year;
@@ -52,6 +83,7 @@ public class Calendar extends Fragment{
                 bundle.putString("year", y);
                 bundle.putString("month", m);
                 bundle.putString("day", d);
+                bundle.putString("dotw", dotw);
                 Fragment fragment = new Schedule();
                 fragment.setArguments(bundle);
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
