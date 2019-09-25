@@ -14,7 +14,7 @@ public class HabitTracker extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        myView = inflater.inflate(R.layout.calendar_layout, container, false);
+        myView = inflater.inflate(R.layout.habit_layout, container, false);
         return myView;
     }
 }

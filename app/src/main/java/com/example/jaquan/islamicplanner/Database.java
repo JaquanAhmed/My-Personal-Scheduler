@@ -75,9 +75,10 @@ public class Database extends SQLiteOpenHelper {
         }
     }
 
-    public Cursor getData(String date){
+    public Cursor getData(String date, String day){
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT * FROM " + TABLE_NAME + " WHERE " + COL_6 + " == 1";
+        String query = "SELECT * FROM " + TABLE_NAME + " WHERE " + COL_6 + " = 1 OR (" + COL_5 + " = 1 AND "
+                + COL_3 + " = " + date + ")";
         Cursor data = db.rawQuery(query, null);
         return data;
     }

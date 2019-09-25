@@ -29,7 +29,7 @@ public class Event extends Fragment implements View.OnClickListener{
         TextView d = myView.findViewById(R.id.date);
         Calendar calendar = Calendar.getInstance();
         Date date = calendar.getTime();
-        SimpleDateFormat dat = new SimpleDateFormat("dd-MM-YYYY");
+        SimpleDateFormat dat = new SimpleDateFormat("dd-MM");
         SimpleDateFormat tim = new SimpleDateFormat("hh:mm");
         t.setText(tim.format(date));
         d.setText(dat.format(date));
@@ -62,7 +62,7 @@ public class Event extends Fragment implements View.OnClickListener{
                         int day = datepicker.getDayOfMonth();
                         Calendar calendar = Calendar.getInstance();
                         calendar.set(year, month, day);
-                        SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+                        SimpleDateFormat format = new SimpleDateFormat("dd-MM");
                         String strDate = format.format(calendar.getTime());
                         d.setText(strDate);
                     }

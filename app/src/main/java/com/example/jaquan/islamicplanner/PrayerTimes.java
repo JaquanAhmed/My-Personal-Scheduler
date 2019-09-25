@@ -122,10 +122,10 @@ public class PrayerTimes {
             }
             Calendar calendar = Calendar.getInstance();
             Date date = calendar.getTime();
-            SimpleDateFormat d = new SimpleDateFormat("dd-MM-YYYY");
+            SimpleDateFormat d = new SimpleDateFormat("dd-MM");
             SimpleDateFormat dotw = new  SimpleDateFormat("EEEE");
             Database database = new Database(context);
-            Cursor Data = database.getData (d.format(date));
+            Cursor Data = database.getData (d.format(date), dotw.format(date));
             while(Data.moveToNext()){
                 String t = Data.getString(1) + "\n" + Data.getString(3);
                 Times.add(t);
