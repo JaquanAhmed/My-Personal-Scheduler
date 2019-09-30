@@ -68,11 +68,10 @@ public class Calendar extends Fragment{
                 }else{
                     d = Integer.toString(dayOfMonth);
                 }
+                month += 1;
                 if (month < 10){
-                    month += 1;
                     m = 0 + Integer.toString(month);
                 }else{
-                    month += 1;
                     m = Integer.toString(month);
                 }
                 //String date = d + "-" + m + "-" + year;
