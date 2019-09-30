@@ -24,7 +24,7 @@ public class Settings extends Fragment implements View.OnClickListener{
         Spinner dropdown = myView.findViewById(R.id.spinner);
         String[] items = new String[]{"Shia Ithna-Ansari", "University of Islamic Sciences, Karachi",
                 "Islamic Society of North America", "Muslim World League", "Umm Al-Qura University, Makkah",
-                "Egyptian General Authority of Survey", "Institute of Geophysics, University of Tehran" ,
+                "Egyptian General Authority of Survey", "Greenwich Islamic Centre (GIC)", "Institute of Geophysics, University of Tehran" ,
                 "Gulf Region", "Kuwait", "Qatar", "Majlis Ugama Islam Singapura, Singapore", "Union Organization islamic de France",
                 "Diyanet İşleri Başkanlığı, Turkey", "Spiritual Administration of Muslims of Russia"};
         final ArrayAdapter adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_dropdown_item, items);

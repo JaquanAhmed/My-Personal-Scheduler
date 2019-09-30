@@ -92,6 +92,9 @@ public class PrayerTimes {
         OkHttpClient client = new OkHttpClient();
 
         String url = "http://api.aladhan.com/v1/calendarByCity?city="+this.city+"&country="+this.country+"&method="+this.method+"&month="+this.month+"&year="+this.year;
+        if (this.method.equals("6")) {
+            url = "http://api.aladhan.com/v1/calendarByCity?city="+this.city+"&country="+this.country+"&method=99&methodSettings=14.7,null,13.2&tune=0,0,-3,5,-1,3,3,0,0&month="+this.month+"&year="+this.year;
+        }
         Request request = new Request.Builder()
                 .url(url)
                 .build();
