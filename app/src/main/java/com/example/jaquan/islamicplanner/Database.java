@@ -83,5 +83,12 @@ public class Database extends SQLiteOpenHelper {
         return data;
     }
 
+    public Cursor getAllData(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT * FROM " + TABLE_NAME;
+        Cursor data = db.rawQuery(query, null);
+        return data;
+    }
+
 
 }

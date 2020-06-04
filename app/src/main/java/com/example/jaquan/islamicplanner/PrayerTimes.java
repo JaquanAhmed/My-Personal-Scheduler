@@ -129,7 +129,6 @@ public class PrayerTimes {
             Cursor Data = database.getData ("\"" + day + "-" + month + "\"", dotw);
             while(Data.moveToNext()){
                     String t = Data.getString(1) + "\n" + Data.getString(3);
-                    Log.e(TAG, t);
                     Times.add(t);
             }
             Collections.sort(Times, new Comparator<String>(){

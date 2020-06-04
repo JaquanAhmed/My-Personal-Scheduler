@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.action_settings) {
             getFragmentManager().beginTransaction()
                     .replace(R.id.contentFrame
-                            , new Settings())
+                            , new CalculationMethod())
                     .commit();
         }
 
